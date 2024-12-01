@@ -1,25 +1,44 @@
-const questionText = document.getElementById("question-text");
+//  _________
+// /         \
+//|  O     O  |
+//|    >_<    |
+//|  \_____/  |
+// \_________/
+//
+// やあ、よく来たね。
+//
+
+console.log("Xx_ 何見てんだよ。ゴミハゲ!　_xX");
+
+const questionText = document.getElementById("text-question");
+const questionBox = document.getElementById("question-box");
+const questionCountText = document.getElementById("text-questionCount");
 const conResult = document.getElementById("container-result");
 const btnResult = document.getElementById("btn-result");
 const choices = document.querySelectorAll(".choice");
 
 const quiz = [{
-					question: "What color is Apple?",
-					choices: ["red", "blue", "green"],
-					correct: "red"
+					count: 1,
+					question: "こちらが何色ですか?",
+					choices: ["Red", "Blue", "Green"],
+					correct: "Red"
 			  },
 			  {
-					question: "What color is Orange?",
-					choices: ["red", "orange", "blue"],
-					correct: "orange"
+					count: 2,
+					question: "これは何色ですか？",
+					choices: ["Onion", "Green", "Blue"],
+					correct: "Green"
 			  },
 			  {
-					question: "What color is Satsumaimo?",
-					choices: ["tom", "mark", "purple"],
-					correct: "purple"
+					count: 3,
+					question: "こちらは何色ですｋ",
+					choices: ["Tom", "Mark", "Blue"],
+					correct: "Blue"
 			  }
 			  
 ];
+
+let fakeCount = 104;
 let quizIndex = 0;
 let isQuizEnd = false;
 let pointWeight = 100 / quiz.length;
@@ -28,7 +47,9 @@ let result = {
 			};
 
 function quizSetup(quizIndex){
+	questionBox.style.backgroundColor = quiz[quizIndex].correct;
 	questionText.textContent = quiz[quizIndex].question;
+	questionCountText.textContent = `${quiz[quizIndex].count} / ${fakeCount}`;
 	for (let i = 0; i < choices.length; i++){
 		choices[i].textContent = quiz[quizIndex].choices[i];
 	};
@@ -41,37 +62,26 @@ quizSetup(quizIndex);
 choices.forEach((choice) => {
 	choice.addEventListener("click", ()=>{
 		if (!isQuizEnd){
-			console.log(`回答: ${choice.textContent}, 正答: ${quiz[quizIndex].correct}`);
 			if (choice.textContent === quiz[quizIndex].correct){
-				console.log("正解");
 				result.point = result.point + 1 * pointWeight;
 			}
-			else {
-				console.log("不正解");
-			};
 			
 			if (quizIndex + 1 < quiz.length){
-				console.log(`${quiz.length}, ${quizIndex}`);
 				quizIndex++;
 				quizSetup(quizIndex);
-				console.log(quizIndex);
 			}
 			else {
-				console.log(`${quiz.length}, ${quizIndex}`);
-				console.log("終了");
+				conResult.classList.add("show");
 				conResult.classList.remove("hidden");
 				sessionStorage.setItem("quizResult", JSON.stringify(result));
 				isQuizEnd = true;
 			}
 		}
 		else {
-			console.log("終了しています");
 		}
 	});
 	i++;
 })
-
-btnResult.addEventListener("click", () => {
-	console.log(result.point);
-});
-
+btnResult.addEventListener("click", ()=>{
+	window.location.href = "result.html";
+})

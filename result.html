@@ -2,13 +2,28 @@
 <html>
 	<head>
 		<title>CBT Result</title>
-		<link rel="stylesheet" href="style.css">
 		<meta charset="UTF-8">
+		<link rel="stylesheet" href="styles/style.css">
+		<link rel="stylesheet" href="styles/modern-normalize.css">
 	</head>
 	<body>
-		<script src="python2.js"></script>
+		<!--
+		  ここにコードがあります。
+		  でも、君が見ているのは何か特別な秘密じゃない。
+		  もしかして、君の探しているのはこのコメントだったり？
+		  まあ、残念ながらそれはこのコードの中にはない。
+		  それとも、君がコードを見ているのはただの習慣か？
+		  でもそれ、いいことだよ。コードを見る時間は大切だ。
+		  でも、コーヒーでも飲んでリラックスしたほうが良いかもね。
+		  それとも、もう一度探し直す勇気を試す？
+		-->
+		<audio id="success" src="snds/success.mp3"></audio>
+		<audio id="fail" src="snds/fail.mp3"></audio>
+		
+		<script src="src/python2.js"></script>
 		<p>結果</p>
-		<p id="textResult"></p>
-		<a href="index.html"><p>back</p></a>
+		<p id="text-Result"></p>
+		<button class="btn hidden" id="btn-back">Back</button>
+		<button class="btn" id="btn-show">押して</button>
 	</body>
 </html>

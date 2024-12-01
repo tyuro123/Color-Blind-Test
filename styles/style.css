@@ -1,0 +1,103 @@
+/*
+	何を探してんだ
+	バカがきが
+	今すぐ
+	帰りな
+	でないと
+	どうなるか
+*/
+
+:root {
+	--main-color: #592d96;
+	--muted-color: #9b9b9b;
+	--white: #f0f0f0;
+	--black: #1c1c1c;
+}
+.hidden {
+	display: none;
+	opacity: 0;
+}
+.show {
+	display: block;
+	margin-top: 100px;
+	opacity: 0;
+	animation: fadeIn 1s cubic-bezier(.17,.67,.37,1) forwards;
+}
+@keyframes fadeIn {
+	100% {
+		margin-top: 0px;
+		opacity: 1;
+	}
+}
+@keyframes showResult {
+	100% {
+		font-size: 120px;
+	}
+}
+
+body{
+	background-color: #0e0e0e;
+	color: var(--white);
+	display:flex;
+	flex-direction: column;
+	user-select: none;
+	margin: auto;
+	padding: 150px 0px 150px 0px;
+	text-align: center;
+	align-items: center;
+	text-decoration: none;
+}
+p{
+	font-size: 40px;
+}
+
+#question-box{
+	width: 250px;
+	height: 250px;
+}
+#text-questionCount{
+	font-size: 30px;
+	color: var(--muted-color);
+}
+#text-question{
+	margin-block-start: 10px;
+}
+p#text-Result{
+	margin: 120px 0px 120px 0px;
+	font-size: 0px;
+}
+p#text-Result.animate{
+	animation: showResult 0.5s linear forwards;
+}
+
+.btn{
+	background-color: var(--main-color);
+	width: 200px;
+	height: 75px;
+	font-size: 25px;
+	font-weight: 500;
+	color: var(--white);
+	cursor: pointer;
+	border-radius: 10px;
+	
+	transition: background-color 0.3s, color 0.3s;
+}
+button#btn-result{
+	margin-top: 20px;
+	width: 100%;
+	transition: background-color 0.3s, color 0.3s, transform 0.3s;
+	opacity: 1;
+}
+.btn:hover{
+	background-color: var(--white);
+	color: var(--black);
+}
+
+.container-choices{
+	display:flex;
+	justify-content: center;
+	gap: 20px;
+}
+.container-questionText{
+	margin: 50px 0 50px 0;
+}

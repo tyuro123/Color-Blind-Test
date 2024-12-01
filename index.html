@@ -2,20 +2,41 @@
 <html>
 	<head>
 		<title>CBT</title>
-		<link rel="stylesheet" href="style.css">
 		<meta charset="UTF-8">
+		<link rel="stylesheet" href="styles/style.css">
+		<link rel="stylesheet" href="styles/modern-normalize.css">
 	</head>
 	<body>
+		<audio id="kirakira" src="snds/kirakira.mp3"></audio>
+		<!-- 何見てんだ？カス -->
+		<!-- 何見てんだ？カス -->
+		<!-- 何見てんだ？カス -->
+		<!-- 何見てんだ？カス -->
+		<!-- 何見てんだ？カス -->
 		<!-- 何見てんだ？カス -->
 		
-		<div id="red"></div>
-		<p id="question-text"></p>
-		<button class="choice" id="choice-1"></button>
-		<button class="choice" id="choice-2"></button>
-		<button class="choice" id="choice-3"></button>
-		<div id="container-result" class="hidden">
-			<a href="result.html"><button id="btn-result">result</button></a>
+		<div id="question-box"></div>
+		<div class="container-questionText">
+			<p id="text-questionCount"></p>
+			<p id="text-question"></p>
 		</div>
-		<script src="python.js"></script>
+		<div class="container-btns">
+			<div class="container-choices">
+				<button class="btn choice" id="choice-1"></button>
+				<button class="btn choice" id="choice-2"></button>
+				<button class="btn choice" id="choice-3"></button>
+			</div>
+			<div id="container-result" class="hidden">
+				<button class="btn" id="btn-result">結果を表示</button>
+			</div>
+		</div>
+		<script src="src/python.js"></script>
+		
+		<!--
+		   WARNING: このコードを読んでいる方へ
+		   気づいたら2時間も検証ツールをいじっているかもしれません。
+		   休憩と水分補給を忘れずに！💧
+		-->
+		
 	</body>
 </html>
